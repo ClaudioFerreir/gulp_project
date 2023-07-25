@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SweetShop</title>
+  <!--Bootstrap CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="./source/styles/main.css">
+  <!--Bootstrap JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
+  <!--Custom JS-->
+  <script src="./source/scripts/main.js" defer></script>
+</head>
+<body>
+  <div class="modal" id="aviso-modal" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="text-uppercase">Fique Atento</h5>
+          <button data-bs-dismiss="modal" type="button" class="btn-close" id="btn-close-alert"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <strong>A SweetShop alerta que não cobra taxas adicionais no ato da entrega. </strong>Todo e qualquer valor a ser pago é preestabelecido e todas as taxas são inclusas, antes do pedido chegar até você. Por isso <strong>não efetue nenhum pagamento</strong> de valor diferente ao da nota fiscal. Em caso de cobrança adicional, <strong class="text-uppercase">denuncie</strong>!.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header id="cabecalho">
+    <div class="navbar navbar-expand-lg">
+      <div class="container">
+        <h1>SweetShop</h1>
+        <button type="button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <nav class="collapse navbar-collapse justify-content-end" id="menu">
+          <ul class="nav navbar-nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active me-2" href="#carouselMain">A SweetShop</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link" href="#lojas">Lojas</a>
+            </li>
+            <li class="nav-item dropdown me-2">
+              <a class="nav-link dropdown-toggle" href="#produtos" data-bs-toggle="dropdown">Produtos</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Bolos</a></li>
+                <li><a class="dropdown-item" href="#">Doces</a></li>
+                <li><a class="dropdown-item" href="#">Kit Festa</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div data-bs-spy="scroll" data-bs-target="#cabecalho" data-bs-smooth-scroll="true">
+    <section id="carouselMain" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100 h-95" src="./source/images/alexander-grey-s4RaGIo2eYI-unsplash.jpg"  alt="">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./source/images/element5-digital-O7-OF1AAsyc-unsplash.jpg" alt="">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./source/images/louis-hansel-PHasEX5wZYc-unsplash.jpg" alt="">
+        </div>
+        <button data-bs-target="#carouselMain" data-bs-slide="prev" class="carousel-control-prev" type="button">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden"></span>
+        </button>
+        <button data-bs-target="#carouselMain" data-bs-slide="next" class="carousel-control-next" type="button">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden"></span>
+        </button>
+        <div class="carousel-indicators">
+          <button type="button" class="active" data-bs-target="#carouselMain" data-bs-slide-to="0"></button>
+          <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2"></button>
+        </div>
+      </div>
+    </section>
+    <section id="lojas">
+      <h3 class="text-center pt-4">Saiba onde encontrar a nossa loja mais proxima</h3>
+      <div class="d-lg-flex container gap-4 pb-4">
+        <select id="estado" class="output form-select mb-3">
+          <option selected>Selecione o estado</option>
+        </select>
+        <select id="cidade" class="form-select">
+          <option selected>Selecione a cidade</option>
+        </select>
+      </div>
+    </section>
+    <section id="produtos" class="pb-4">
+      <div class="container">
+        <h4 class="text-center p-5 fs-2 mb-0">Conheça nossos produtos</h4>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 pb-4">
+            <div class="card text-bg-dark rounded-5">
+              <img src="./source/images/bg_bolos.png" alt="imagem de bolo">
+              <div class="card-img-overlay d-flex flex-column justify-content-end align-items-center">
+                <h4 class="card-title text-uppercase"> Bolos</h4>
+                <a href="#" class="btn btn-secondary px-4 border border-0">Eu quero!</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 pb-4">
+            <div class="card text-bg-dark rounded-5">
+              <img src="./source/images/bg_doces.png" alt="imagem de doces">
+              <div class="card-img-overlay d-flex flex-column justify-content-end align-items-center">
+                <h4 class="card-title text-uppercase">Doces</h4>
+                <a href="#" class="btn btn-secondary px-4 border border-0">Eu quero!</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 pb-4">
+            <div class="card text-bg-dark rounded-5">
+              <img src="./source/images/bg_kit_festa.png" alt="imagem de doces festa">
+            <div class="card-img-overlay d-flex flex-column justify-content-end align-items-center">
+              <h4 class="card-title text-uppercase">Kit Festa</h4>
+              <a href="#" class="btn btn-secondary px-4 border border-0">Eu quero!</a>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contato">
+      <div class="d-flex align-items-center justify-content-center justify-content-evenly p-3 container gap-2">
+        <img src="./source/images/app-rodape-icon.png" alt="">
+        <p class="m-0">Um clique para adoçar o seu dia! <strong>Baixe nosso app.</strong></p>
+        <img src="./source/images/google-play.png" alt="logo google play">
+        <img src="./source/images/app-store.png" alt="logo apple store">
+      </div>
+    </section>
+    <footer id="rodape">
+      <div class="footer-contacts d-flex align-items-center justify-content-center justify-content-evenly p-4 gap-2">
+        <span><a href="#carouselMain" class="text-decoration-none">SweetShop</a></span>
+        <div class="separated"></div>
+        <span><a href="#produtos" class="text-decoration-none">Produtos</a></span>
+        <div class="separated"></div>
+        <span><a href="#lojas" class="text-decoration-none">Lojas</a></span>
+        <div class="separated"></div>
+        <span><a href="#contato" class="text-decoration-none">Contato</a></span>
+        <div class="separated"></div>
+        <span><a href="#" class="text-decoration-none">Política de Privacidade</a></span>
+      </div>
+      <div class="copy text-center pt-2">&copy; 2023 SweetShop. Todos os direitos reservados.</div>
+      <div class="copy2 text-center pb-2">Created by Claudio Ferreira. </div>
+    </footer>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast" id="mensagem-cookies"  data-bs-autohide="false">
+      <header class="toast-header">
+        <strong>Importante</strong>
+      </header>
+      <div class="toast-body">
+        Este site utiliza cookies para melhorar a sua experiência de navegação. Ao continuar navegando, você concorda com a nossa <a href="#">Política de Privacidade.</a>
+      </div>
+      <div class="p-2 border-top">
+        <button data-bs-dismiss="toast" type="button" class="btn btn-secondary">Aceitar Cookies</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

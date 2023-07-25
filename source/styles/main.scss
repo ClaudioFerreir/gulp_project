@@ -1,0 +1,137 @@
+@use './variaveis';
+@use 'mixins';
+
+* {
+  @include mixins.reset;
+}
+
+.modal-header {
+  border-bottom: 1px solid variaveis.$primary-color;
+}
+
+header {
+  background-color: variaveis.$background-color;
+  position: sticky;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 2px 2px variaveis.$primary-color;
+  z-index: 1;
+}
+
+.dropdown-menu,
+.modal-content,
+.btn-secondary,
+#rodape  {
+  color: variaveis.$primary-color;
+  background-color: variaveis.$background-color;
+}
+
+#navbar,
+h1,
+h4,
+.dropdown-menu.show li a,
+.nav-link.dropdown-toggle.show {
+  color: variaveis.$primary-color;
+}
+
+.navbar nav .nav-link.active,
+.dropdown-menu.show li a:hover,
+.btn-secondary:hover {
+  color: variaveis.$background-color;
+  background-color: variaveis.$primary-color;
+}
+
+.dropdown-menu {
+  border: none;
+  filter: drop-shadow(2px 2px 2px variaveis.$primary-color);
+  z-index: 1;
+}
+
+.nav-link {
+  text-align: center;
+  color: variaveis.$primary-color;
+}
+
+/*Carousel section*/
+.carousel-item img{
+  height: 80vh;
+  object-fit: cover;
+}
+
+/*Lojas section*/
+#lojas {
+  height: auto;
+  color: variaveis.$background-color;
+  background-color: variaveis.$primary-color;
+}
+
+#lojas select {
+  height: 3em;
+}
+
+/*Contato section*/
+#contato {
+  background-color: variaveis.$primary-color;
+}
+
+#contato p {
+  color: variaveis.$background-color;
+}
+
+/*footer*/
+.separated {
+  width: 1px;
+  background-color: variaveis.$primary-color;
+  align-self: stretch;
+}
+
+#rodape a {
+  color: variaveis.$primary-color;
+}
+
+@media screen and (max-width: 767px) {
+  #aviso-modal {
+    max-width: 50vh;
+  }
+
+  #carouselMain img{
+    height: 50vh;
+  }
+
+  #lojas h3 {
+    padding-bottom: 1em;
+  }
+
+  #produtos h4 {
+    font-size: 2em;
+  }
+
+  #produtos a {
+    width: 30vh;
+  }
+
+  .toast-container {
+    max-width: 50vh;
+    position: fixed;
+    left: 0;
+  }
+
+  #contato > div,
+  #rodape > div {
+    flex-direction: column;
+  }
+
+  #contato strong {
+    display: block;
+    text-align: center;
+  }
+
+  .copy {
+    border-top: 1px solid variaveis.$primary-color;
+    font-size: 10px;
+  }
+
+  .copy2 {
+    font-size: 10px;
+  }
+}
